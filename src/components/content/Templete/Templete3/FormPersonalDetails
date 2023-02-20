@@ -1,0 +1,73 @@
+import React,{Component} from "react";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import AppBar from "material-ui/AppBar";
+import TextField from "material-ui/TextField";
+import { RaisedButton } from "material-ui";
+
+
+export class FormPersonalDetails extends Component {
+    continue = e=> {
+        e.preventDefault();
+        this.props.nextStep();
+    }
+
+        back = e=> {
+            e.preventDefault();
+            this.props.prevStep();
+    }
+    render() {
+        const{values} = this .props;
+
+        return [
+        <MuiThemeProvider>
+        <ReactFragment>
+        <AppBar title="Enter Personal Details"/>
+<TextField 
+hindText="Enter your Ocuppation"
+floatingLabelText="Occupation"
+onChange={handleChange["Occupation"]}
+defaultValue={values.Occupation}
+/>
+<br/>
+<TextField 
+hindText="Enter your city"
+floatingLabelText="city"
+onChange={handleChange["city"]}
+defaultValue={values.City}
+/>
+<br/>
+<TextField 
+hindText="Enter your bio"
+floatingLabelText="bio"
+onChange={handleChange["Bio"]}
+defaultValue={values.bio}
+/>
+<br/>
+<RaisedButton
+label="countinue"
+primary={ture}
+style={style.button}
+onclick={this.continue}
+/>
+
+<RaisedButton
+label="Back"
+primary={false}
+style={style.button}
+onclick={this.back}
+/>
+        </ReactFragment>
+        </MuiThemeProvider>
+        ];
+    }
+}
+ const style={
+    button:{
+        Margin:15
+    }
+ }
+export default FormPersonalDetails
+
+
+
+
